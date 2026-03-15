@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <h1 class="logo">MyLanding</h1>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h2>Welcome to Our Landing Page</h2>
+        <p>Create beautiful websites with HTML and CSS.</p>
+        <button onclick="showMessage()">Get Started</button>
+    </div>
+</section>
+
+<section id="features" class="features">
+    <h2>Our Features</h2>
+
+    <div class="feature-container">
+
+        <div class="box">
+            <h3>Easy Layout</h3>
+            <p>Learn to divide sections and create clean layouts.</p>
+        </div>
+
+        <div class="box">
+            <h3>Creative Design</h3>
+            <p>Use colors, padding, and alignment to make pages attractive.</p>
+        </div>
+
+        <div class="box">
+            <h3>Responsive</h3>
+            <p>Pages adjust nicely for mobile, tablet, and desktop.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="about" class="about">
+    <h2>About This Project</h2>
+    <p>
+        This landing page project helps beginners understand HTML structure
+        and CSS styling. It teaches how to create headers, footers,
+        columns, and sections with proper alignment.
+    </p>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+
+    <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message"></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 MyLanding | Internship Project</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
