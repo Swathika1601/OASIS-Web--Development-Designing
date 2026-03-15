@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature Converter</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg,#74ebd5,#9face6);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .container{
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.2);
+            text-align:center;
+            width:300px;
+        }
+
+        input, select, button{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+            border-radius:5px;
+            border:1px solid #ccc;
+        }
+
+        button{
+            background:#4CAF50;
+            color:white;
+            border:none;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#45a049;
+        }
+
+        #result{
+            margin-top:15px;
+            font-size:18px;
+            font-weight:bold;
+            color:#333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Temperature Converter</h2>
+
+    <!-- Temperature Input -->
+    <input type="text" id="temperature" placeholder="Enter temperature">
+
+    <!-- Unit Selection -->
+    <select id="unit">
+        <option value="C">Celsius</option>
+        <option value="F">Fahrenheit</option>
+        <option value="K">Kelvin</option>
+    </select>
+
+    <!-- Convert Button -->
+    <button onclick="convertTemperature()">Convert</button>
+
+    <!-- Result Display -->
+    <div id="result"></div>
+</div>
+
+<script>
+function convertTemperature(){
+    let temp = document.getElementById("temperature").value;
+    let unit = document.getElementById("unit").value;
+    let result = document.getElementById("result");
+
+    // Validate input
+    if(temp === "" || isNaN(temp)){
+        result.innerHTML = "⚠️ Please enter a valid number.";
+        return;
+    }
+
+    temp = parseFloat(temp);
+    let convertedTemp;
+
+    if(unit === "C"){
+        convertedTemp = (temp * 9/5) + 32;
+        result.innerHTML = temp + " °C = " + convertedTemp.toFixed(2) + " °F";
+    }
+    else if(unit === "F"){
+        convertedTemp = (temp - 32) * 5/9;
+        result.innerHTML = temp + " °F = " + convertedTemp.toFixed(2) + " °C";
+    }
+    else if(unit === "K"){
+        convertedTemp = temp - 273.15;
+        result.innerHTML = temp + " K = " + convertedTemp.toFixed(2) + " °C";
+    }
+}
+</script>
+
+</body>
+</html>
